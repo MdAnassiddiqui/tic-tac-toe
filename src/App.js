@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Card from './component/Card';
+import ScoreCard from './component/ScoreCard';
+import './style/App.scss'; 
 
-function App() {
+const App = () => {
+  const [winner, setWinner] = useState("");
+
+  const handleGameOutcome = (result) => {
+    setWinner(result); 
+  };
+  
+  const resetWinner = () => {
+    setWinner(""); 
+  };
+  console.log("Winner prop in parent component:", winner);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>Tic-Tac-Toe</h1>
+      <ScoreCard winner={winner} />
+      <Card onGameOutcome={handleGameOutcome} onGameRestart={resetWinner} />
     </div>
   );
-}
+};
 
 export default App;

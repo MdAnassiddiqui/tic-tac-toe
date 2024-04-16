@@ -1,0 +1,22 @@
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  .score {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .player1 {
+    color: #007bff; 
+  }
+  
+  .player2 {
+    color: #dc3545; 
+  }
+  
